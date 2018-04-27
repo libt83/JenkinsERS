@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Register</title>
+
+<!-- Bootstrap -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="Styles/main.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Roboto+Slab"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="top">
+				<h1 id="welcome" >Create an Account</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<form id="create-account-form" action="add_user" method="post"><!-- onsubmit="validateInput(event)" -->
+					<div class="form-group">
+						<label for="firstname" id="firstname-label"> <strong
+							style="font-size: 18px"">First Name</strong>
+						</label> <input type="text" style="border: 1.5px solid black" class="form-control" id="firstname"
+							placeholder="Enter your first name" name="firstname" required>
+					</div>
+					<div class="form-group">
+						<label for="lastname" id="lastname-label"> <strong
+							style="font-size: 18px">Last Name</strong>
+						</label> <input type="text" min="2" style="border: 1.5px solid black" class="form-control" id="lastname"
+							placeholder="Enter your last name" name="lastname" required>
+					</div>
+					<div class="form-group">
+						<label for="email" id="email-label"> <strong
+							style="font-size: 18px">Email</strong>
+						</label> <input type="email" min="2" style="border: 1.5px solid black" class="form-control" id="email"
+							placeholder="Enter your email" name="email" required> <span
+							id="invalid-email"></span>
+					</div>
+					<div class="form-group">
+						<label for="username" id="username-label"> <strong
+							style="font-size: 18px">Username</strong>
+						</label> <input type="text" min="8" max="50" style="border: 1.5px solid black" class="form-control" id="username"
+							placeholder="Enter your username" name="username" required>
+					</div>
+					<div class="form-group">
+						<label for="password" id="password-label"> <strong
+							style="font-size: 18px">Password</strong>
+						</label> <input type="password"  min="8" max="50" style="border: 1.5px solid black" class="form-control" id="password"
+							placeholder="Enter your password" name="password" required> <span
+							id="invalid-pass"></span>
+					</div>
+					<div class="form-group">
+						<label for="pin" id="pin-label"> <strong
+							style="font-size: 18px">Manager PIN Number</strong>
+						</label> <input type="password" style="border: 1.5px solid black" class="form-control" id="pin"
+							placeholder="Enter manager PIN" name="pin">
+					</div>
+					<button type="submit"  style="border: 1.5px solid black; border-radius: 10px 10px;" class="btn btn-default" id="create-btn">
+						<strong>Create Account</strong>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="Scripts/register.js"></script>
+</body>
+
+</html>

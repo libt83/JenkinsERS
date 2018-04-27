@@ -1,0 +1,38 @@
+.container {
+	background-color: rgb(164, 172, 179);
+	border-width: 1.2px;
+	border-color: black;
+	display: table;
+}
+
+body {
+	background-color: rgb(20, 98, 175);
+	font-family: 'Roboto Slab', serif;
+}
+
+th {
+	background-color: rgb(20, 98, 175);
+	border-width: 1.2px;
+	border-style: inset;
+	border-color: black;
+}
+
+td {
+	background-color: rgb(240, 240, 240);
+}
+
+table {
+	border-width: 1.2px;
+	border-color: black;
+	border-radius: 10px 10px;
+}
+
+#logout {
+	margin: 5%;
+}
+
+#submit, #myInput, #logout {
+	border-width: 1.2px;
+	border-color: black;
+	border-radius: 10px 10px;
+}

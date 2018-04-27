@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Employee Portal</title>
+
+<!-- Bootstrap -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="Styles\emp.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Roboto+Slab"
+	rel="stylesheet">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js">
+	
+</script>
+</head>
+
+<body>
+	<div id="top-flex-box" class="d-md-flex">
+		<div class="p-2">
+			<h2>Employee Portal</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="flex-col" class="d-md-flex flex-col">
+					<div class="p-2">
+						<button id="add" type="button">Add Reimbursement</button>
+					</div>
+					<div class="p-2">
+						<button id="view" type="button">View Reimbursements
+							</button>
+					</div>
+					<div class="p-2" style="margin-left: auto">
+						<form action="logout" method="post">
+							<button id="logout">Logout</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div id="search" style="visibility: visible">
+					<h2>Reimbursement Lookup</h2>
+					<input class="form-control" id="myInput" type="text"
+						placeholder="Search.."> <br>
+				</div>
+				<table class="table table-bordered table-striped"
+					style="visibility: collapse" id="table">
+					<thead>
+						<tr>
+							<th style="border: 1px solid black">ID</th>
+							<th style="border: 1px solid black">AMOUNT</th>
+							<th style="border: 1px solid black">Time Submitted</th>
+							<th style="border: 1px solid black">Time Resolved</th>
+							<th style="border: 1px solid black">Description</th>
+							<th style="border: 1px solid black">Resolver ID</th>
+							<th style="border: 1px solid black">Status</th>
+							<th style="border: 1px solid black">Type</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+					</tbody>
+				</table>
+			</div>
+			<div id="reimb-form" class="col" style="visibility: collapse">
+				<form action="add_reimb" method="post">
+					<div class="form-group">
+						<label for="amount" id="amounte-label"> <strong
+							style="font-size: 18px">Amount of Reimbursement</strong>
+						</label> <input type="number" class="form-control" id="amount" min="1.00"
+							max="1000.00" step="0.01" placeholder="Enter dollar amount"
+							name="amount" required>
+					</div>
+					<div class="form-group">
+						<label for="descrip" id="descrip-label"> <strong
+							style="font-size: 18px">Description of Reimbursement</strong>
+						</label>
+						<textarea style="width: 100%" id="descrip"
+							placeholder="  Describe your reimbursement in 250 characters or less"
+							rows="10" maxlength="250" name="descript" required></textarea>
+					</div>
+					<div class="form-group">
+						<label for="type" id="type-label"> <strong
+							style="font-size: 18px">Reimbursement Type</strong>
+						</label><br> <select id="reimb-type" name="type" required>
+							<option disabled selected value>-- Select an Option --</option>
+							<option>Food</option>
+							<option>Lodging</option>
+							<option>Travel</option>
+							<option>Other</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-default" id="add-ticket">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#myInput").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$("#myTable tr").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+	</script>
+	<script src="Scripts/emp.js"></script>
+</body>
+</html>

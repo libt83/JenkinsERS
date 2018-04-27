@@ -1,0 +1,40 @@
+body {
+	background-color: rgb(20, 98, 175);
+	font-family: 'Roboto Slab', serif;
+}
+
+.row {
+	border: 1px solid black;
+	border-radius: 10px 10px;
+}
+
+.container {
+	background-color: rgb(164, 172, 179);
+	border-radius: 10px 10px;
+	display: table;
+}
+
+#myInput, #reimb-type, #descrip, #amount, #add, #view, #logout {
+	border: 1px solid black;
+	border-radius: 10px 10px;
+}
+
+td {
+	background-color: rgb(240, 240, 240);
+}
+
+thead {
+	background-color: rgb(20, 98, 175);
+	border: 1px solid black;
+}
+
+#myTable {
+	background-color: rgb(164, 172, 179);
+	border: 1.5px solid black;
+}
+
+#add-ticket {
+	margin: 0.5%;
+	border: 1.5px solid black;
+	border-radius: 10px 10px;
+}
